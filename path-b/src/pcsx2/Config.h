@@ -1146,7 +1146,7 @@ struct Pcsx2Config
 			vu1Instant : 1; // Enable Instant VU1 (Without MTVU only)
 		BITFIELD_END
 
-		s8 EECycleRate; // EE cycle rate selector (1.0, 1.5, 2.0)
+		s8 EECycleRate{-1}; // EE cycle rate selector (1.0, 1.5, 2.0)
 		u8 EECycleSkip; // EE Cycle skip factor (0, 1, 2, or 3)
 
 		SpeedhackOptions();
@@ -1201,7 +1201,7 @@ struct Pcsx2Config
 		bool UseVSyncForTiming : 1;
 		BITFIELD_END
 
-		float NominalScalar{1.0f};
+		float NominalScalar{0.833f};
 		float TurboScalar{2.0f};
 		float SlomoScalar{0.5f};
 
