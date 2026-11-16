@@ -128,7 +128,7 @@ public class GameActivity extends NativeActivity {
         // The glue reads the IsoHolder strings in main() and turns them
         // into the port's environment.
         SharedPreferences prefs = getSharedPreferences(LauncherActivity.PREFS, MODE_PRIVATE);
-        IsoHolder.optGsScale = prefs.getString(LauncherActivity.KEY_SET_SCALE, "1");
+        IsoHolder.optGsScale = prefs.getString(LauncherActivity.KEY_SET_SCALE, "0.75");
         // m40: the app mode, read up here because m42 needs it before
         // the performance options below.
         String appMode = prefs.getString(LauncherActivity.KEY_SET_MODE, LauncherActivity.MODE_PLAYER);
@@ -143,7 +143,7 @@ public class GameActivity extends NativeActivity {
         // rule, exactly as m41.
         IsoHolder.optThreadPolicy = (!developerMode
                 || prefs.getBoolean(LauncherActivity.KEY_SET_THREADS, false)) ? "auto" : "off";
-        IsoHolder.optVsync = prefs.getBoolean(LauncherActivity.KEY_SET_VSYNC, true) ? "1" : "0";
+        IsoHolder.optVsync = prefs.getBoolean(LauncherActivity.KEY_SET_VSYNC, false) ? "1" : "0";
         IsoHolder.optShowFps = prefs.getBoolean(LauncherActivity.KEY_SET_FPS, true) ? "on" : "off";
         // Milestone 7: disc prefetch, owner-controlled, default off.
         // m42: forced on in Player mode, like thread placement above.
